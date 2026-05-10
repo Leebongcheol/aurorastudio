@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Aurora Studio — 오로라스튜디오</title>
+<meta name="description" content="Aurora Studio is a mobile-first app studio based in Seoul, Korea. We build thoughtful apps for Korean users." />
+<meta property="og:title" content="Aurora Studio" />
+<meta property="og:description" content="Mobile app studio in Seoul, Korea." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://leebongcheol.github.io/aurorastudio/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563EB'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='-apple-system,sans-serif' font-weight='800' font-size='36' fill='white'%3ES%3C/text%3E%3Ccircle cx='50' cy='14' r='4' fill='%2384CC16'/%3E%3C/svg%3E" />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{
+    --blue:#2563EB;
+    --blue-dark:#1D4ED8;
+    --blue-bg:#EFF6FF;
+    --lime:#84CC16;
+    --lime-acid:#A3E635;
+    --ink:#0F172A;
+    --ink-2:#334155;
+    --ink-3:#64748B;
+    --line:#E2E8F0;
+    --bg:#FFFFFF;
+    --bg-2:#F8FAFC;
+  }
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px}
+  /* Header */
+  header{padding:24px 0;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:10}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;letter-spacing:-0.01em;color:var(--ink)}
+  .brand-mark{width:36px;height:36px;border-radius:10px;background:var(--blue);display:grid;place-items:center;color:#fff;font-weight:900;font-size:20px;position:relative}
+  .brand-mark::after{content:"";position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:var(--lime-acid);box-shadow:0 0 0 2px #fff}
+  /* Hero */
+  .hero{padding:80px 0 64px;background:linear-gradient(180deg,var(--blue-bg) 0%,#fff 100%)}
+  .kicker{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:13px;color:var(--ink-2);font-weight:600;margin-bottom:24px}
+  .kicker-dot{width:6px;height:6px;border-radius:50%;background:var(--lime-acid)}
+  h1{font-size:clamp(32px,5vw,52px);line-height:1.15;margin:0 0 20px;letter-spacing:-0.02em;font-weight:800}
+  h1 span{color:var(--blue)}
+  .lede{font-size:clamp(16px,1.6vw,19px);color:var(--ink-2);margin:0 0 12px;max-width:720px}
+  .lede-en{font-size:14px;color:var(--ink-3);max-width:720px;margin:0}
+  /* Sections */
+  section{padding:72px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+  h2{font-size:28px;letter-spacing:-0.01em;margin:0 0 8px;font-weight:800}
+  .section-sub{color:var(--ink-3);font-size:14px;margin:0 0 36px;text-transform:uppercase;letter-spacing:0.08em;font-weight:700}
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .about p{margin:0 0 12px;color:var(--ink-2)}
+  .about p.en{color:var(--ink-3);font-size:15px}
+  @media(max-width:720px){.about-grid{grid-template-columns:1fr}}
+  /* Products */
+  .products{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:720px){.products{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--bg);transition:border-color .15s,transform .15s}
+  .card:hover{border-color:var(--blue);transform:translateY(-2px)}
+  .card-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;color:var(--blue);background:var(--blue-bg);padding:4px 10px;border-radius:999px;margin-bottom:14px;text-transform:uppercase}
+  .card-tag.coming{color:#92400E;background:#FEF3C7}
+  .card h3{font-size:24px;margin:0 0 8px;letter-spacing:-0.01em;font-weight:800}
+  .card .h3-en{color:var(--ink-3);font-size:13px;font-weight:600;margin:0 0 14px}
+  .card p{margin:0 0 16px;color:var(--ink-2);font-size:15px}
+  .card .link{font-size:14px;font-weight:600;color:var(--blue)}
+  /* Contact */
+  .contact-row{display:grid;grid-template-columns:140px 1fr;gap:8px 24px;font-size:15px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .contact-row:last-child{border-bottom:0}
+  .contact-key{color:var(--ink-3);font-weight:600}
+  .contact-val{color:var(--ink)}
+  /* Footer */
+  footer{padding:36px 0 56px;font-size:13px;color:var(--ink-3);background:var(--bg-2)}
+  .footer-row{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:6px}
+  .footer-bottom{padding-top:14px;border-top:1px solid var(--line);margin-top:14px;color:var(--ink-3)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <span>Aurora Studio</span>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <div class="kicker"><span class="kicker-dot"></span>SEOUL · MOBILE APP STUDIO</div>
+    <h1>한국 사용자를 위한<br/><span>모바일 앱</span>을 만듭니다.</h1>
+    <p class="lede">Aurora Studio (오로라스튜디오) 는 서울에 위치한 1인 모바일 앱 스튜디오입니다. 한국 시장의 일상과 운동 습관을 더 즐겁게 만드는 앱을 만듭니다.</p>
+    <p class="lede-en">Aurora Studio is a mobile app studio based in Seoul, Korea, designing apps that fit Korean lifestyles.</p>
+  </div>
+</div>
+
+<section id="about">
+  <div class="container about">
+    <h2>About</h2>
+    <p class="section-sub">소개</p>
+    <div class="about-grid">
+      <div>
+        <p>2026년 4월 설립된 1인 모바일 앱 스튜디오입니다. iOS 와 Android 양 플랫폼을 직접 개발하며, 한국 사용자에게 자연스러운 UX 와 한국 인프라 (지도·결제·소셜) 와의 깊은 통합을 우선합니다.</p>
+        <p>현재는 러닝과 일상 습관을 주제로 두 개의 앱을 운영·개발 중이며, 작은 규모의 신중한 출시를 통해 사용자와 함께 제품을 다듬어 갑니다.</p>
+      </div>
+      <div>
+        <p class="en">Founded in April 2026, Aurora Studio is a one-person mobile app studio building iOS and Android apps in-house. We focus on running and lifestyle apps designed for Korean users, with deep integration into Korean infrastructure (maps, payments, social).</p>
+        <p class="en">We ship small, ship carefully, and iterate with our users.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="container">
+    <h2>Products</h2>
+    <p class="section-sub">제품</p>
+    <div class="products">
+      <div class="card">
+        <span class="card-tag coming">Coming Soon · 출시 예정</span>
+        <h3>Stamp Run</h3>
+        <p class="h3-en">Discover, run, and stamp Korea's best running courses</p>
+        <p>한국 러너를 위한 UGC 코스 + 도전 앱. 골목과 한강·공원의 검증된 러닝 코스를 발견하고, 도전을 완주해 골드 스탬프와 월간 스탬프왕을 노리는 러닝 RPG.</p>
+        <span class="link">stamprun.app · 2026 출시 예정</span>
+      </div>
+      <div class="card">
+        <span class="card-tag">In Service · 서비스 중</span>
+        <h3>Pilain</h3>
+        <p class="h3-en">A Korean mobile app by Aurora Studio</p>
+        <p>Aurora Studio 의 서비스 중인 모바일 앱. 자세한 소개는 공식 사이트에서 확인하실 수 있습니다.</p>
+        <a class="link" href="https://pilain.co.kr" target="_blank" rel="noopener">pilain.co.kr →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="section-sub">문의</p>
+    <div>
+      <div class="contact-row">
+        <div class="contact-key">Email</div>
+        <div class="contact-val"><a href="mailto:aurorastudio26@naver.com">aurorastudio26@naver.com</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-key">Business Hours</div>
+        <div class="contact-val">평일 (Mon–Fri) 10:00 – 18:00 KST</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-key">Press / Partnerships</div>
+        <div class="contact-val"><a href="mailto:aurorastudio26@naver.com">aurorastudio26@naver.com</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row"><strong>Aurora Studio (오로라스튜디오)</strong></div>
+    <div class="footer-row">
+      <span>대표자: 이봉철 (Bongcheol Lee)</span>
+      <span>·</span>
+      <span>사업자등록번호: 432-70-00758</span>
+    </div>
+    <div class="footer-row">
+      <span>사업장: 서울특별시 강서구 방화대로 309-15, 804호 (방화동, 보타닉타워)</span>
+    </div>
+    <div class="footer-row">
+      <span>Address: 309-15 Banghwa-daero, Gangseo-gu, Seoul, Republic of Korea, #804</span>
+    </div>
+    <div class="footer-row">
+      <span>Email: <a href="mailto:aurorastudio26@naver.com">aurorastudio26@naver.com</a></span>
+    </div>
+    <div class="footer-bottom">© 2026 Aurora Studio. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
